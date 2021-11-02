@@ -1,0 +1,46 @@
+# SVS IMAGE SOURCES
+imagesRootDir: Slides/
+imagesSubDirs:
+  - PureAD/
+  - PurePSP/
+  - PureCBD/
+  
+# Data and Model Generation Parameters
+regenerateData: False #Warning: Changing this to True will overwrite all models and data
+regeneratePatchData: False #Warning: Changing this to True will overwrite all patch data
+
+
+foldNumber: 1
+region: WM   
+# Patch Generation Variables
+downSampleLevels: [1] # Downsampling factor relative to max (typically 20X). So 4 will give the 5X image. Adding multiple values gives patches at different scales
+patchSizeList: [224] # Patch size (we assume patches are square) in pixels. Specify patch size separately for each scale in downSampleLevels
+showProgress: True
+maxPatchesPerAnno: 2500 # Maximum number of patches sampled from an annotation10000
+maxAvgPatchOverlap: 2.0 # How tightly patches are allowed to overlap. 0 implies no overlap, 1 implies number of patches is selected so that combined area of patches= area of annotation
+minFracPatchInAnno: 0.99 # What percentage of the patch must belong to same class as the center pixel, for the patch to be considered
+#Patch Directory
+patchDir: PatchData/Disease_Classifier/
+foldsDir: PatchData/Disease_Classifier/
+modelDir: Models/Disease_Classifier/
+resultsHandCraftedDir: Analysis/HandCrafted/
+resultsDir: Analysis/BruteForce/
+figureDir: Figures/
+
+
+
+nPatchesPerSlide: 1000
+
+# Generated Region Masks
+regionMasksDir: ClassifiedSlides/Region_Masks/
+
+# Generated Aggregate Masks
+aggMasksDir: ClassifiedSlides/Aggregate_Masks/Fold2/
+
+
+
+
+
+
+#------------------------------------------
+

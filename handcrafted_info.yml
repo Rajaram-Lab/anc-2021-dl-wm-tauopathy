@@ -1,0 +1,49 @@
+# SVS IMAGE SOURCES
+imagesRootDir: Slides/
+imagesSubDirs:
+  - PureAD/
+  - PurePSP/
+  - PureCBD/
+
+# Data and Model Generation Parameters
+regenerateData: False #Warning: Changing this to True will overwrite all models and data
+
+
+# Generated Region Masks
+regionMasksDir: ClassifiedSlides/Region_Masks/
+
+#Folds Dir
+foldsDir: PatchData/Aggregate_Classifier/Folds
+foldsDirBox: PatchData/Aggregate_Classifier/BoxLocation/Folds
+
+# Generated Aggregate Masks
+aggMasksDir: ClassifiedSlides/Aggregate_Masks/Fold2/
+
+#Parameters for Feature Extraction
+minArea: 30
+maxArea: 10000
+
+# Analysis Directory
+resultsDir: Analysis/HandCrafted/
+
+# Data
+featMatSlideList: Analysis/HandCrafted/featMatListSlide_Fold2.npy
+featMatAggList: Analysis/HandCrafted/featMatListAgg_Fold2.npy
+saveFeatMatSlideList: Analysis/HandCrafted/featMatListSlide_Fold2.npy
+saveFeatMatAggList: Analysis/HandCrafted/featMatListAgg_Fold2.npy
+featNames: Analysis/HandCrafted/featNames.npy
+aggUMAP: Analysis/HandCrafted/aggUMAP.pkl
+artifactRF: Analysis/HandCrafted/randomForest_ArtifactDetection.pkl
+
+#Tau Burden
+tauBurden: Analysis/HandCrafted/tauBurden_Fold2.npy
+
+#Comparing features to ground truth
+featMatListGT:  Analysis/HandCrafted/featMatListGTMed_Fold2.npy
+featMatListPred:  Analysis/HandCrafted/featMatListPredMed_Fold2.npy
+
+figureDir: Figures/
+
+
+#------------------------------------------
+

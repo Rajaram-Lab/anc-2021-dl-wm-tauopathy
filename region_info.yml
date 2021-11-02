@@ -1,0 +1,49 @@
+# SVS IMAGE SOURCES
+imagesRootDir: Slides/
+imagesSubDirs:
+  - PureAD/
+  - PurePSP/
+  - PureCBD/
+
+# Data and Model Generation Parameters
+regenerateData: False #Warning: Changing this to True will overwrite all models and data
+regeneratePatchData: False #Warning: Changing this to True will overwrite all patch data
+
+#Annotation Directory
+annotationsDir: Annotations/Region_Classifier/
+
+#Patch Directory
+patchDir: PatchData/Region_Classifier
+
+#Patch Generation Parameters
+classDict: {'BG':0,'WM':1, 'CTX':2} #Classes for classification
+distinguishAnnosInClass: False #If False, all annotations of the same class are treated as one, and sampling is performed from this
+downSampleLevels: [1] # Downsampling factor relative to max (typically 20X). So 4 will give the 5X image.
+patchSizeList: [256] #Pixel size of patches to be used for model training
+maskDownSampleFactor: 1 # How much smaller is the mask. Leads to big speed ups, but loss of resolution, which is acceptable at tumor level
+showProgress: True #Display patch generation progress
+maxPatchesPerAnno: 5000 # Maximum number of patches sampled from an annotation
+maxAvgPatchOverlap: 1000.0 # How tightly patches are allowed to overlap. 0 implies no overlap, 1 implies number of patches is selected so that combined area of patches= area of annotation
+minFracPatchInAnno: 0 # What percentage of the patch must belong to same class as the center pixel, for the patch to be considered
+
+
+#Segmentation parameter
+minArea: 1000 #minimum area for region segmentation
+
+
+#FOLDS Directory
+foldsDir: PatchData/Region_Classifier/Folds
+
+#Aggregate Classifier
+modelDir: Models/Region_Classifier/
+modelFile_Fold1: Models/Region_Classifier/CTX_WM_Fold1_E20.hdf5
+modelFile_Fold2: Models/Region_Classifier/CTX_WM_Fold2_E20.hdf5
+modelFile_Fold3: Models/Region_Classifier/CTX_WM_Fold3_E20.hdf5
+
+
+#Results Dir
+resultsDir: ClassifiedSlides/Region_Masks
+figureDir: Figures/
+#---------------------------------------------------------
+
+

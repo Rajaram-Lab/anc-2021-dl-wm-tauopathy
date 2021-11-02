@@ -1,0 +1,43 @@
+# SVS IMAGE SOURCES
+imagesRootDir: Slides/
+imagesSubDirs:
+  - PureAD/
+  - PurePSP/
+  - PureCBD/
+  
+# Data and Model Generation Parameters
+regenerateData: False #Warning: Changing this to True will overwrite all models and data
+regeneratePatchData: False #Warning: Changing this to True will overwrite all patch data
+
+# ANNOTATIONS, Patch Generation Parameters
+annotationsDir: Annotations/Aggregate_Classifier
+outerBoxClassName: Box
+minBoxSize: [400, 400]
+magLevel: 0
+minAnnoBoxArea: 10 # Annotations with bounding boxes with area smaller than this are dropped
+#Not sure what else is needed...
+classDict: {'BG':0,'Tau':1, 'Edge':2}
+samplingFactor: 4
+patchSize: 400
+addEdgeClass: True
+foldNumber: 2
+useFold: True
+
+#Patch Directory
+patchDir: PatchData/Aggregate_Classifier
+
+#FOLDS Directory
+foldsDir: PatchData/Aggregate_Classifier/Folds
+cortexFile: PatchData/Aggregate_Classifier/CTX/Folds/Testing3.txt
+
+#Aggregate Classifier
+modelDir: Models/Aggregate_Classifier/
+modelFile_Fold1: Models/Aggregate_Classifier/unet_AggClassifierEdgeLoss_Fold1_E50.h5
+modelFile_Fold2: Models/Aggregate_Classifier/unet_AggClassifierEdgeLoss_Fold2_E50.h5
+
+#Results Dir
+resultsDir: ClassifiedSlides/Aggregate_Masks/Fold2
+figureDir: Figures/
+#---------------------------------------------------------
+
+
